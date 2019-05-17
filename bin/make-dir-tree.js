@@ -9,16 +9,20 @@ const CONFIG = {
   DIR_ONLY: false,
   OUTPUT: 'dir-tree.txt',
   GAP: 2,
+  EXCLUDES: '',
 }
 
 let textCache = '';
 
 function walkDir(dir, depth, isLastItem = false, prevLine = []) {
-  const list = fs.readdirSync(dir, {
-    // withFileTypes: true, // need node v10.10.0+
-  });
+  const list = fs
+    .readdirSync(dir, {
+      // withFileTypes: true, // need node v10.10.0+
+    })
+    .filter(name => !isIgnored(name));
   
   list.forEach((name, index) => {
+
     const curPath = path.resolve(dir, name);
     const isDirectory = fs.statSync(curPath).isDirectory();
     const [isFirstItem, isLastItem] = [index === 0, index === list.length - 1];
@@ -34,6 +38,12 @@ function walkDir(dir, depth, isLastItem = false, prevLine = []) {
       );
     }
   });
+}
+
+const patternExcludes = new RegExp(CONFIG.EXCLUDES);
+
+function isIgnored(name) {
+  return CONFIG.EXCLUDES && patternExcludes.test(name)
 }
 
 const charBlank = new Array(CONFIG.GAP + 1).fill(' ').join('');

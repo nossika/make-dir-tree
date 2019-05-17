@@ -1,0 +1,10 @@
+{
+  "name": "make-dir-tree",
+  "version": "0.1.0",
+  "description": "auto gen dir-tree",
+  "bin": {
+    "make-dir-tree": "bin/make-dir-tree.js"
+  },
+  "author": "nossika",
+  "license": "MIT"
+}

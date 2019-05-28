@@ -1,5 +1,0 @@
-├── README.md
-├── bin
-│   └── make-dir-tree.js
-├── dir-tree.txt
-└── package.json

@@ -8,7 +8,19 @@ auto generate dir-tree in your project
 
     $ cd /your/project
 
-    $ make-dir-tree
+    $ make-dir-tree [options]
+
+## Options
+
+| options | params | description |
+| ------ | ------ | ------ |
+| -d, --depth | num | max dir depth |
+| -n, --output | filename | output filename |
+| -e, --excludes | pattern | excludes rule |
+| -o, --only-dir | - | show dir only |
+
+
+
 
 
 

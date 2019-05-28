@@ -1,10 +1,13 @@
 {
   "name": "make-dir-tree",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "auto gen dir-tree",
   "bin": {
     "make-dir-tree": "bin/make-dir-tree.js"
   },
   "author": "nossika",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.20.0"
+  }
 }
